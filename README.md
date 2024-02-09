@@ -24,7 +24,7 @@ The Phonebook Application aims to create a phonebook application in Python and d
 
 - Phone numbers in the app can be in any format, but the inputs should be checked to prevent string type. If the user inputs string in the number field, user should be warned with text message.
 
-- Example for user inputs and respective formats
+- Example for user inputs and respective formats:
 
 ```text
 Input in username field          Format to convert
@@ -54,7 +54,7 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
     - delete a record using `delete.html`.
 
-  - User input can be either integer or string, thus the input should be checked for the followings,
+  - User input can be either integer or string, thus the input should be checked for the followings:
 
     - The input for name should be string, and input for the phone number should be decimal number.
 
@@ -64,7 +64,7 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
   - The Web Application should be accessible via web browser from anywhere.
 
-- Lastly, after transforming your code into web application, you are requested to push your program to the project repository on the Github and deploy your solution in the development environment on AWS Cloud using Terraform to showcase your project. In the development environment, you can configure your Terraform file using the followings,
+- Lastly, after transforming your code into web application, you are requested to push your program to the project repository on the Github and deploy your solution in the development environment on AWS Cloud using Terraform to showcase your project. In the development environment, you can configure your Terraform file using the followings:
 
 ![Project_207](Security-Groups.png)
 
@@ -80,31 +80,31 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
     - use all Availability Zones.
 
-    - set desired capacity of instances to `2`
+    - set desired capacity of instances to `2`.
 
-    - set minimum size of instances to `1`
+    - set minimum size of instances to `1`.
 
-    - set maximum size of instances to `3`
+    - set maximum size of instances to `3`.
 
-    - set health check grace period to `300 seconds`
+    - set health check grace period to `300 seconds`.
 
-    - set health check type to `ELB`
+    - set health check type to `ELB`.
 
   - The Launch Template should be configured to;
 
-    - prepare Python Flask environment on EC2 instance,
+    - prepare Python Flask environment on EC2 instance.
 
-    - download the Phonebook Application code from Github repository,
+    - download the Phonebook Application code from Github repository.
 
     - deploy the application on Flask Server.
 
   - EC2 Instances type can be configured as `t2.micro`.
 
-  - Instance launched by Terraform should be tagged `Web Server of Phonebook App`
+  - Instance launched by Terraform should be tagged `Web Server of Phonebook App`.
 
   - For RDS Database Instance;
   
-    - Instance type can be configured as `db.t2.micro`
+    - Instance type can be configured as `db.t2.micro`.
 
     - Database engine can be `MySQL` with version of `8.0.19`.
 
@@ -164,23 +164,23 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
 ### At the end of the project, students will be able to;
 
-- show their coding skills using boolean/math operators, string formatting, if statements and functions within Python.
+- Show their coding skills using boolean/math operators, string formatting, if statements and functions within Python.
 
-- apply web programming skills using HTTP GET/POST methods, template formatting, importing packages within Python Flask Framework
+- Apply web programming skills using HTTP GET/POST methods, template formatting, importing packages within Python Flask Framework.
 
-- configure connection to the `MySQL` database.
+- Configure connection to the `MySQL` database.
 
-- work with a database using the SQL within Flask application.
+- Work with a database using the SQL within Flask application.
 
-- demonstrate bash scripting skills using `user data` section within launch template in Terraform to install and setup web application on EC2 Instance.
+- Demonstrate bash scripting skills using `user data` section within launch template in Terraform to install and setup web application on EC2 Instance.
 
-- demonstrate their configuration skills of AWS EC2 Launch Templates, Application Load Balancer, ALB Target Group, ALB Listener, Auto Scaling Group, RDS and Security Groups.
+- Demonstrate their configuration skills of AWS EC2 Launch Templates, Application Load Balancer, ALB Target Group, ALB Listener, Auto Scaling Group, RDS and Security Groups.
 
-- configure Terraform template to use AWS Resources.
+- Configure Terraform template to use AWS Resources.
 
-- show how to use Terraform to launch AWS Resources.
+- Show how to use Terraform to launch AWS Resources.
 
-- apply git commands (push, pull, commit, add etc.) and Github as Version Control System.
+- Apply git commands (push, pull, commit, add etc.) and Github as Version Control System.
 
 ## Steps to Solution
   
