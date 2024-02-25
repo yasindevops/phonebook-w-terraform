@@ -1,10 +1,10 @@
 # Project-202 : Phonebook Application (Python Flask) deployed on AWS Application Load Balancer with Auto Scaling and Relational Database Service using Terraform
 
-## Description
+## Description:
 
 The Phonebook Application aims to create a phonebook application in Python and deployed as a web application with Flask on AWS Application Load Balancer with Auto Scaling Group of Elastic Compute Cloud (EC2) Instances and Relational Database Service (RDS) using Terraform.
 
-## Problem Statement
+## Problem Statement:
 
 ![Project_002](tf-phonebook.png)
 
@@ -14,11 +14,11 @@ The Phonebook Application aims to create a phonebook application in Python and d
 
 - Application should allow users to search, add, update and delete the phonebook records and the phonebook records should be kept in separate MySQL database in AWS RDS service. Following is the format of data to be kept in db.
 
-  - id: unique identifier for the phone record, type is numeric.
+  - Id: unique identifier for the phone record, type is numeric.
 
-  - person: full name of person for the phone record, type is string.
+  - Person: full name of person for the phone record, type is string.
 
-  - number: phone number of the person. type is numeric.
+  - Number: phone number of the person. type is numeric.
 
 - All the interactions with user on phonebook app should be done in case insensitive manner and name of the person should be formatted so that, only the first letters of each words in the name of the person should be in capital letters. If the user inputs number in the username field, user should be warned with text message.
 
@@ -29,17 +29,17 @@ The Phonebook Application aims to create a phonebook application in Python and d
 ```text
 Input in username field          Format to convert
 --------------                   -----------------
-''                               Warning -> 'Invalid input: Name can not be empty'
+''                               Warning -> 'Invalid input: Name can not be empty.'
 callahan                         Callahan
 joHn doE                         John Doe
-62267                            Warning -> 'Invalid input: Name of person should be text'
+62267                            Warning -> 'Invalid input: Name of person should be text.'
 
 Input in number field            Format to convert
 --------------                   -----------------
-''                               Warning -> 'Invalid input: Phone number can not be empty'
+''                               Warning -> 'Invalid input: Phone number can not be empty.'
 1234567890                       1234567890
 546347                           546347
-thousand                         Warning -> 'Invalid input: Phone number should be in numeric format'
+thousand                         Warning -> 'Invalid input: Phone number should be in numeric format.'
 ```
 
 - As a second step, after you finish the coding, you are requested to deploy your web application using Python's Flask framework.
@@ -48,11 +48,11 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
   - User should face first with `index.html` when web app started and the user should be able to; 
 
-    - search the phonebook using `index.html`.
+    - Search the phonebook using `index.html`.
 
-    - add or update a record using `add-update.html`.
+    - Add or update a record using `add-update.html`.
 
-    - delete a record using `delete.html`.
+    - Delete a record using `delete.html`.
 
   - User input can be either integer or string, thus the input should be checked for the followings:
 
@@ -78,25 +78,25 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
   - The Auto Scaling Group should use a Launch Template in order to launch instances needed and should be configured to;
 
-    - use all Availability Zones.
+    - Use all Availability Zones.
 
-    - set desired capacity of instances to `2`.
+    - Set desired capacity of instances to `2`.
 
-    - set minimum size of instances to `1`.
+    - Set minimum size of instances to `1`.
 
-    - set maximum size of instances to `3`.
+    - Set maximum size of instances to `3`.
 
-    - set health check grace period to `300 seconds`.
+    - Set health check grace period to `300 seconds`.
 
-    - set health check type to `ELB`.
+    - Set health check type to `ELB`.
 
   - The Launch Template should be configured to;
 
-    - prepare Python Flask environment on EC2 instance.
+    - Prepare Python Flask environment on EC2 instance.
 
-    - download the Phonebook Application code from Github repository.
+    - Download the Phonebook Application code from Github repository.
 
-    - deploy the application on Flask Server.
+    - Deploy the application on Flask Server.
 
   - EC2 Instances type can be configured as `t2.micro`.
 
@@ -110,7 +110,7 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
   - Phonebook Application Website URL should be given as output by Terraform, after the resources created.
 
-## Project Skeleton 
+## Project Skeleton: 
 
 ```text
 002-tf-phonebook-web-application (folder)
@@ -130,37 +130,37 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
 ### At the end of the project, following topics are to be covered;
 
-- Algorithm design
+- Algorithm design.
 
-- Programming with Python
+- Programming with Python.
 
-- Programming with SQL
+- Programming with SQL.
 
-- Web application programming with Python Flask Framework
+- Web application programming with Python Flask Framework.
 
-- MySQL Database Configuration
+- MySQL Database Configuration.
 
-- Bash scripting
+- Bash scripting.
 
-- AWS EC2 Launch Template Configuration
+- AWS EC2 Launch Template Configuration.
 
-- AWS EC2 Application Load Balancer Configuration
+- AWS EC2 Application Load Balancer Configuration.
 
-- AWS EC2 ALB Target Group Configuration
+- AWS EC2 ALB Target Group Configuration.
 
-- AWS EC2 ALB Listener Configuration
+- AWS EC2 ALB Listener Configuration.
 
-- AWS EC2 Auto Scaling Group Configuration
+- AWS EC2 Auto Scaling Group Configuration.
 
-- AWS Relational Database Service Configuration
+- AWS Relational Database Service Configuration.
 
-- AWS EC2 Security Groups Configuration
+- AWS EC2 Security Groups Configuration.
 
-- Terraform Configuration with AWS
+- Terraform Configuration with AWS.
 
-- Terraform Configuration with Github
+- Terraform Configuration with Github.
 
-- Git & Github for Version Control System
+- Git & Github for Version Control System.
 
 ### At the end of the project, students will be able to;
 
@@ -182,7 +182,7 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
 - Apply git commands (push, pull, commit, add etc.) and Github as Version Control System.
 
-## Steps to Solution
+## Steps to Solution:
   
 - Step 1: Download or clone project definition from `clarusway` repo on Github 
 
@@ -201,7 +201,7 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 - Step 6: Run `terraform destroy` command to destroy resources that you created with terraform.
 
 
-## Notes
+## Notes:
 
 - Use the template formatting library `jinja` within Flask framework to leverage from given templates.
 
@@ -218,7 +218,7 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 aws ec2 describe-subnets --no-paginate --filters "Name=default-for-az,Values=true" | egrep "(VpcId)|(SubnetId)"
 ```
 
-## Resources
+## Resources:
 
 - [Python Flask Framework](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
 
