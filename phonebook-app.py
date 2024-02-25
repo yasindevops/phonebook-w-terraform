@@ -1,7 +1,7 @@
 # To show this app works fine, we need to create a RDS instance at first.
 
-# Import Flask modules
-# As we know, we are gonna import necessary libraries. We've also imported 
+# Import Flask modules.
+# As we know, we are gonna import necessary libraries. We've also imported. 
 from flask import Flask, request, render_template
 from flaskext.mysql import MySQL
 import os
@@ -9,10 +9,10 @@ import os
 # Create an object named app
 app = Flask(__name__)
 
-# Configure mysql database
+# Configure MYSQL database.
 
 # Once we are done with the database, we are going to create database.
-# we need to configure our database. I've explained this part before. Lets have a look at these configuration. 
+# We need to configure our database. I've explained this part before. Lets have a look at these configuration. 
 app.config['MYSQL_DATABASE_HOST'] = os.getenv('MYSQL_DATABASE_HOST')
 app.config['MYSQL_DATABASE_USER'] = 'admin'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'Oliver_1'
@@ -25,9 +25,10 @@ connection = mysql.connect()
 connection.autocommit(True)
 cursor = connection.cursor()
 
-# Write a function named `init_todo_db` create phonebook table within clarusway_phonebook db, if it doesn't exist
+# Write a function named `init_todo_db` create phonebook table within clarusway_phonebook DB, if it doesn't exist
 
-# Lets paste Because of the id is auto_incremental, I don't need to worry about to id column. mysql is going to give id on behalf of us.
+# Lets paste because of the id is auto_incremental, I don't need to worry about to id column. MYSQL is going to give id on behalf of us.
+
 def init_phonebook_db():
     phonebook_table = """
     CREATE TABLE IF NOT EXISTS phonebook.phonebook(
@@ -39,10 +40,10 @@ def init_phonebook_db():
     """
     cursor.execute(phonebook_table) # This is the connection to our database.
 
-# Write a function named `find_persons` which finds persons' record using the keyword from the phonebook table in the db,and returns result as list of dictionary 
+# Write a function named `find_persons` which finds persons' record using the keyword from the phonebook table in the DB and returns result as list of dictionary. 
 # `[{'id': 1, 'name':'XXXX', 'number': 'XXXXXX'}]`.
 
-# This function is to find my results that has "keyword" into database
+# This function is to find my results that has "keyword" into database.
 def find_persons(keyword):
     # You are very familiar with this query. This query will select all columns where the name like keyword. strip will remove all the white spaces, and lower will turn uppercase into lowercase.
     query = f"""
@@ -56,7 +57,7 @@ def find_persons(keyword):
     return persons
 
 
-# Write a function named `insert_person` which inserts person into the phonebook table in the db,
+# Write a function named `insert_person` which inserts person into the phonebook table in the DB,
 # and returns text info about result of the operation
 
 # We've defined insert_person function. at this time, I'll put name and number as parameter. 
@@ -100,8 +101,8 @@ def update_person(name, number):
     return f'Phone record of {name.strip().title()} is updated successfully'
 
 
-# Write a function named `delete_person` which deletes person record from the phonebook table in the db,
-# and returns returns text info about result of the operation
+# Write a function named `delete_person` which deletes person record from the phonebook table in the DB,
+# and returns returns text info about result of the operation.
 def delete_person(name):
     query = f"""
     SELECT * FROM phonebook WHERE name like '{name.strip().lower()}';
